@@ -22,13 +22,13 @@
     /* Contenedor principal */
     .container {
       background: rgba(255, 255, 255, 0.85); /* Fondo blanco con transparencia */
-      padding: 30px 20px;
+      padding: 30px 50px;
       border-radius: 20px;
       box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
       text-align: center;
       position: relative;
-      width: 90%;
-      max-width: 600px;
+      width: 80%; /* Reducimos el ancho para que no ocupe toda la pantalla */
+      max-width: 500px; /* Ajustamos el máximo para que sea más pequeño */
     }
 
     /* Título principal */
@@ -59,26 +59,25 @@
     #countdown {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 15px; /* Reducimos el espacio entre los elementos del contador */
       margin-top: 20px;
       flex-wrap: wrap; /* Permite que los elementos se ajusten en dispositivos pequeños */
     }
 
     .time {
       text-align: center;
-      flex: 1 1 calc(25% - 20px); /* Tamaño flexible para los números */
-      max-width: 120px;
-      margin: 10px;
+      flex: 1 1 calc(25% - 15px); /* Tamaño flexible para adaptarse a diferentes pantallas */
+      max-width: 100px; /* Reducimos el tamaño máximo de cada bloque */
     }
 
     /* Estilo de los números */
     .time span {
       display: block;
-      font-size: 2.5rem;
+      font-size: 2.5rem; /* Reducimos el tamaño del texto */
       font-weight: 300; /* Letra más delgada */
       color: #222;
       background: rgba(255, 223, 186, 0.8); /* Dorado pastel */
-      padding: 15px;
+      padding: 10px; /* Reducimos el padding */
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       margin-bottom: 5px;
@@ -86,15 +85,15 @@
 
     /* Texto debajo de los números */
     .time p {
-      font-size: 1rem;
+      font-size: 0.9rem; /* Reducimos el tamaño de la fuente */
       color: #777;
       font-weight: 300; /* Letra más delgada */
     }
 
     /* Texto adicional */
     .extra-text {
-      margin-top: 30px;
-      font-size: 1.2rem;
+      margin-top: 20px;
+      font-size: 1rem; /* Reducimos ligeramente el tamaño */
       color: #444;
       font-weight: 300; /* Letra más delgada */
     }
@@ -102,12 +101,12 @@
     /* Emojis decorativos */
     .emojis {
       margin-top: 10px;
-      font-size: 1.5rem;
+      font-size: 1.4rem; /* Reducimos el tamaño de los emojis */
     }
 
     /* Avioncito animado */
     .airplane {
-      font-size: 2rem;
+      font-size: 1.8rem; /* Reducimos el tamaño del avión */
       color: #d4af37; /* Dorado */
       position: absolute;
       top: -10%;
@@ -130,6 +129,11 @@
 
     /* Media queries para dispositivos pequeños */
     @media (max-width: 768px) {
+      .container {
+        width: 85%;
+        padding: 20px;
+      }
+
       h1 {
         font-size: 1.8rem;
       }
@@ -140,15 +144,15 @@
 
       .time span {
         font-size: 2rem;
-        padding: 10px;
+        padding: 8px;
       }
 
       .time p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
       }
 
       .extra-text {
-        font-size: 1rem;
+        font-size: 0.9rem;
       }
 
       .emojis {
@@ -158,7 +162,8 @@
 
     @media (max-width: 480px) {
       .container {
-        padding: 20px 15px;
+        width: 90%; /* Más pequeño en pantallas de teléfonos */
+        padding: 15px;
       }
 
       h1 {
@@ -167,11 +172,15 @@
 
       .time span {
         font-size: 1.8rem;
-        padding: 8px;
+        padding: 5px;
       }
 
       .time p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+      }
+
+      .emojis {
+        font-size: 1rem;
       }
     }
   </style>
@@ -180,7 +189,7 @@
   <div class="container">
     <!-- Icono representativo de los 25 años -->
     <div class="icon">💍</div>
-    <h1>¡Celebremos 25 años de amor!</h1>
+    <h1>¡Nos vamos de vacaciones!</h1>
     <p class="subtitle">Falta poco para nuestra gran aventura</p>
     <div id="countdown">
       <div class="time">
@@ -208,7 +217,7 @@
   </div>
   <script>
     // Fecha del aniversario - Cambia la fecha a la que desees
-    const targetDate = new Date("2025-05-04T00:07:00").getTime();
+    const targetDate = new Date("2025-04-05T00:07:00").getTime();
 
     const countdown = () => {
       const now = new Date().getTime();
